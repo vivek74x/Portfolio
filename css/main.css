@@ -1327,7 +1327,7 @@ header .logo a {
 .intro-content h2 {
 	color: #FFFFFF;
 	font-family: "poppins-medium", sans-serif;
-	font-size: 1.5rem;
+	font-size: 4.4rem; /* Adjust this value to change the font size */
 	line-height: 1.071;
 	max-width: 900px;
 	margin-top: 0;
