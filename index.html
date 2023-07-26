@@ -887,12 +887,36 @@
    <script src="js/safety.js"></script>
 
 
+<!-- For disabling Inspect Element
+   ================================================== -->
+
 	<script>
 	// Disable right-click on the entire page
 	document.addEventListener('contextmenu', function(e) {
 		e.preventDefault();
 	});
         </script>
+
+<!-- To Prevent text from Webpage
+   ================================================== -->
+	<script>
+        // Disable text selection on the entire page
+        function disableSelection(element) {
+            if (typeof element.onselectstart !== 'undefined') {
+                element.onselectstart = function() { return false; };
+            } else if (typeof element.style.MozUserSelect !== 'undefined') {
+                element.style.MozUserSelect = 'none';
+            } else {
+                element.onmousedown = function() { return false; };
+            }
+        }
+
+        // Call the function on the body element
+        document.addEventListener('DOMContentLoaded', function() {
+            var body = document.getElementsByTagName('body')[0];
+            disableSelection(body);
+        });
+    </script>
 
 </body>
 
